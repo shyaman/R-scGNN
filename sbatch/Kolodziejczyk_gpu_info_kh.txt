@@ -1,0 +1,68 @@
+Sun Apr 16 22:45:37 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 515.48.07    Driver Version: 515.48.07    CUDA Version: 11.7     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA A30          On   | 00000000:3B:00.0 Off |                    0 |
+| N/A   29C    P0    27W / 165W |      0MiB / 24576MiB |      0%      Default |
+|                               |                      |             Disabled |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Sun Apr 16 22:45:37 2023
+Driver Version                            : 515.48.07
+CUDA Version                              : 11.7
+
+Attached GPUs                             : 1
+GPU 00000000:3B:00.0
+    FB Memory Usage
+        Total                             : 24576 MiB
+        Reserved                          : 464 MiB
+        Used                              : 0 MiB
+        Free                              : 24111 MiB
+    BAR1 Memory Usage
+        Total                             : 32768 MiB
+        Used                              : 19 MiB
+        Free                              : 32749 MiB
+    Utilization
+        Gpu                               : 0 %
+        Memory                            : 0 %
+        Encoder                           : 0 %
+        Decoder                           : 0 %
+    GPU Utilization Samples
+        Duration                          : 19.71 sec
+        Number of Samples                 : 99
+        Max                               : 0 %
+        Min                               : 0 %
+        Avg                               : 0 %
+    Memory Utilization Samples
+        Duration                          : 19.71 sec
+        Number of Samples                 : 99
+        Max                               : 0 %
+        Min                               : 0 %
+        Avg                               : 0 %
+    ENC Utilization Samples
+        Duration                          : 19.71 sec
+        Number of Samples                 : 99
+        Max                               : 0 %
+        Min                               : 0 %
+        Avg                               : 0 %
+    DEC Utilization Samples
+        Duration                          : 19.71 sec
+        Number of Samples                 : 99
+        Max                               : 0 %
+        Min                               : 0 %
+        Avg                               : 0 %
+
