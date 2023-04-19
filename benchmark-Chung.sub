@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#SBATCH --job-name=bench_Chung
+#SBATCH --output=sbatch/benchmarking.v100.stdout.Chung.txt
+#SBATCH --error=sbatch/benchmarking.v100.stderr.Chung.txt
+#SBATCH --account=standby
+#SBATCH --time=4:00:00
+#SBATCH --nodes=1
+#SBATCH --gpus-per-task=1
+#SBATCH --constraint=G
+
+host=`hostname -s`
+
+echo $CUDA_VISIBLE_DEVICES
+
+module load anaconda/2020.11-py38
+conda activate DPLClass
+
+nvidia-smi > sbatch/Chung_gpu_info_v100.txt
+nvidia-smi -q -d UTILIZATION,MEMORY >> sbatch/Chung_gpu_info_v100.txt
+
+mkdir -p outputDir_gpu_v100/Chung/
+mkdir -p outputDir_gpu_v100/Chung_rgvae/
+
+python3 -W ignore main_benchmark.py --datasetName Chung --benchmark Data/benchmarkData/Chung/Chung_cell_label.csv --LTMGDir Data/benchmarkData/ --regulized-type LTMG --EMtype celltypeEM --clustering-method LouvainK --useGAEembedding --npyDir outputDir_gpu_v100/Chung/ --debuginfo  
+python3 -W ignore main_benchmark_rgvae.py --datasetName Chung --benchmark Data/benchmarkData/Chung/Chung_cell_label.csv --LTMGDir Data/benchmarkData/ --regulized-type LTMG --EMtype celltypeEM --clustering-method LouvainK --useGAEembedding --npyDir outputDir_gpu_v100/Chung_rgvae/ --debuginfo  

@@ -155,6 +155,12 @@ parser.add_argument('--GAEdropout', type=float, default=0.,
 parser.add_argument('--GAElr_dw', type=float, default=0.001,
                     help='Initial learning rate for regularization.')
 
+# parameters for R-GMM-VGAE
+parser.add_argument('--num_neurons', type=int, default=32, help="number of neurons in the hidden layer")
+parser.add_argument('--embedding_size', type=int, default=16, help="dimension of the embedding")
+parser.add_argument('--beta1', type=float, default=0.3)
+parser.add_argument('--beta2', type=float, default=0.15)
+
 args = parser.parse_args()
 args.cuda = not args.no_cuda and torch.cuda.is_available()
 args.sparseMode = not args.nonsparseMode

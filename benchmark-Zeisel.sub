@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#SBATCH --job-name=bench_Zeisel
+#SBATCH --output=sbatch/benchmarking.v100.stdout.Zeisel.txt
+#SBATCH --error=sbatch/benchmarking.v100.stderr.Zeisel.txt
+#SBATCH --account=standby
+#SBATCH --time=4:00:00
+#SBATCH --nodes=1
+#SBATCH --gpus-per-task=1
+#SBATCH --constraint=G
+
+host=`hostname -s`
+
+echo $CUDA_VISIBLE_DEVICES
+
+module load anaconda/2020.11-py38
+conda activate DPLClass
+
+nvidia-smi > sbatch/Zeisel_gpu_info_v100.txt
+nvidia-smi -q -d UTILIZATION,MEMORY >> sbatch/Zeisel_gpu_info_v100.txt
+
+mkdir -p outputDir_gpu_v100/Zeisel/
+mkdir -p outputDir_gpu_v100/Zeisel_rgvae/
+
+python3 -W ignore main_benchmark.py --datasetName Zeisel --benchmark Data/benchmarkData/Zeisel/Zeisel_cell_label.csv --LTMGDir Data/benchmarkData/ --regulized-type LTMG --EMtype celltypeEM --clustering-method LouvainK --useGAEembedding --npyDir outputDir_gpu_v100/Zeisel/ --debuginfo
+python3 -W ignore main_benchmark_rgvae.py --datasetName Zeisel --benchmark Data/benchmarkData/Zeisel/Zeisel_cell_label.csv --LTMGDir Data/benchmarkData/ --regulized-type LTMG --EMtype celltypeEM --clustering-method LouvainK --useGAEembedding --npyDir outputDir_gpu_v100/Zeisel_rgvae/ --debuginfo
+
+
+
+
+

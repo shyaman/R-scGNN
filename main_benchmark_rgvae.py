@@ -18,7 +18,8 @@ from model import AE, VAE
 from util_function import *
 from graph_function import *
 from benchmark_util import *
-from gae_embedding import GAEembedding, measure_clustering_results, test_clustering_benchmark_results
+# from gae_embedding import GAEembedding, measure_clustering_results, test_clustering_benchmark_results
+from rgae_embedding import GAEembedding, measure_clustering_results, test_clustering_benchmark_results
 # from LTMG_R import *
 import pandas as pd
 
