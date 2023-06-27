@@ -1,6 +1,10 @@
 # R-scGNN   
 
-06/27/23 - This code is an adaptation of the original work by Wang et al. In this implementation, we have replaced the vanilla graph autoencoder with a more advanced model called the Rethinking Graph Autoencoder (Variational Graph Auto-Encoder with Gaussian Mixture Model). This was completed as part of the coursework for CS690DPL.
+**06/27/23** - This code is an adaptation of the original work by Wang et al. In this implementation, we have replaced the vanilla graph autoencoder with a more advanced model called the Rethinking Graph Autoencoder (Variational Graph Auto-Encoder with Gaussian Mixture Model). This was completed as part of the coursework for CS690DPL.
+
+More info
+- [Project presentation](cs690DPL-proj-presentation.pdf)
+- [Project report](cs690_proj_report.pdf)
 
 ## About:
 
